@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'view/keyword'
+
   resources :fan_comments
 
   resources :reviews
