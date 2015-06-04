@@ -1,4 +1,5 @@
 class ViewController < ApplicationController
-  def keyword
+  def form_tag
+    @book = Book.new
   end
 end
