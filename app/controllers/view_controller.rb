@@ -26,4 +26,7 @@ class ViewController < ApplicationController
     @book = Book.new(publish: '技術評論社')
     @books = Book.select(:publish).distinct
   end
+  def default_url_options(options = {})
+    { charset: 'utf-8' }
+  end
 end
