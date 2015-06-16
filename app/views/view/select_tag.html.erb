@@ -1,0 +1,6 @@
+<%= select_tag 'publish', raw('<option value="1">技術評論社</option>
+<option value="2">翔泳社</option>
+<option value="3">マイナビ</option>') %><br/>
+
+<%= select_tag 'publish', options_for_select(
+{ '技術評論社' => 1, '翔泳社' => 2, 'マイナビ' => 3 }, 2) %><br/>

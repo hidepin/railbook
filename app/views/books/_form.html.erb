@@ -36,6 +36,6 @@
     <%= f.check_box :cd %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit '保存', data: { confirm: '保存しても良いですか?', disable_with: '処理中...' } %>
   </div>
 <% end %>
