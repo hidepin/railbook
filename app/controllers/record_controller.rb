@@ -66,4 +66,8 @@ class RecordController < ApplicationController
     @book = Book.order(published: :desc).last
     render 'books/show'
   end
+
+  def groupby
+    @books = Book.select('publish, AVG(price) AS avg_price').group(:publish)
+  end
 end
