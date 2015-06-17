@@ -35,4 +35,9 @@ class RecordController < ApplicationController
     @books = Book.where(publish: '技術評論社').order(published: :desc)
     render 'hello/list'
   end
+
+  def reorder
+    @books = Book.order(:publish).reorder(:price)
+    render 'books/index'
+  end
 end
