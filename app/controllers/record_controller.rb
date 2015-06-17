@@ -25,4 +25,9 @@ class RecordController < ApplicationController
                         publish: params[:publish], price: params[:price])
     render 'hello/list'
   end
+
+  def not
+    @books = Book.where.not(isbn: params[:id])
+    render 'books/index'
+  end
 end
