@@ -134,4 +134,13 @@ class RecordController < ApplicationController
     cnt4 = Book.distinct.count(:publish)
     render text: "#{cnt}件です。#{cnt2}/#{cnt3}/#{cnt4}"
   end
+
+  def average
+    price = Book.where(publish: '技術評論社').average(:price)
+    render text: "平均価格は#{price}です。"
+  end
+
+  def groupby2
+    @books = Book.group(:publish).average(:price)
+  end
 end
