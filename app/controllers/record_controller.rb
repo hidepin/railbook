@@ -108,4 +108,8 @@ class RecordController < ApplicationController
     end
     render 'books/index'
   end
+
+  def pluck
+    render text: Book.where(publish: '技術評論社').pluck(:title, :price)
+  end
 end
