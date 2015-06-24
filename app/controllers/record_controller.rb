@@ -126,4 +126,12 @@ class RecordController < ApplicationController
   def def_scope
     render text: Review.all.inspect
   end
+
+  def count
+    cnt = Book.where(publish: '技術評論社').count
+    cnt2 = Book.count
+    cnt3 = Book.count(:publish)
+    cnt4 = Book.distinct.count(:publish)
+    render text: "#{cnt}件です。#{cnt2}/#{cnt3}/#{cnt4}"
+  end
 end
