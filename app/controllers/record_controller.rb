@@ -122,4 +122,8 @@ class RecordController < ApplicationController
     @books = Book.gihyo.top10
     render 'hello/list'
   end
+
+  def def_scope
+    render text: Review.all.inspect
+  end
 end
