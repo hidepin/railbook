@@ -150,7 +150,7 @@ class RecordController < ApplicationController
   end
 
   def update_all
-    cnt = Book.where(publish: '技術評論社').update_all(publish: 'Gihyo')
+    cnt = Book.where(publish: 'Gihyo').update_all(publish: '技術評論社')
     render text: "#{cnt}件のデータを更新しました。"
   end
 
