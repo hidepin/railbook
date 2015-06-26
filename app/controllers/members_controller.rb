@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class MembersController < ApplicationController
   before_action :set_member, only: [:show, :edit, :update, :destroy]
 
@@ -49,6 +50,8 @@ class MembersController < ApplicationController
         format.json { render json: @member.errors, status: :unprocessable_entity }
       end
     end
+    rescue ActiveRecord::StaleObjectError
+      render text: '競合エラーが発生しました。'
   end
 
   # DELETE /members/1
