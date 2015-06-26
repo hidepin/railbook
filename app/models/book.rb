@@ -7,7 +7,8 @@ class Book < ActiveRecord::Base
     format: { with: /\A[0-9]{3}-[0-9]{1}-[0-9]{3,5}-[0-9]{4}-[0-9X]{1}\z/ }
   validates :title,
     presence: true,
-    length: { minimum: 1, maxmum: 100 }
+    length: { minimum: 1, maxmum: 100 },
+    uniqueness: { scope: :publish }
   validates :price,
     numericality: { only_integer: true, less_than: 10000 }
   validates :publish,
