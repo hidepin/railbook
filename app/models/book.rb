@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 class Book < ActiveRecord::Base
+  has_many :reviews
   validates :isbn,
     presence: { message: 'は必須です。' },
     uniqueness: { allow_blank: true },
