@@ -1,0 +1,2 @@
+class CtrlController < ApplicationController
+end
