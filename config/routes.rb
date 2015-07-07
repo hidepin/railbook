@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :members
+
   get 'view/keyword'
 
   resources :fan_comments
